@@ -6,7 +6,7 @@ A high school game assignment created to fully complete the games development co
 
 before running the game in a text editor its necessary to download 2 python modules for it to function correctly that being pygame and colorama 
 to install these modules you will need to install pip and run the following commands in a terminal: "pip install pygame" and "pip install colorama" (without quotations).
-its preferable to run this game under visual studio code, however any typical text edior will suffice just as long it can run correctly. 
+Its preferable to run this game under visual studio code, however any typical text edior will suffice just as long it can run correctly. 
 
 # Notice: 
 
