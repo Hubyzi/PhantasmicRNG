@@ -11,7 +11,10 @@ Game Type: interactive text-based, turn-based combat, adventure game
 Personal Notes: This project may be the biggest one I have made so far and will prove to be a big learning experience. As of writing this I predict
 my project will go beyond 700 lines of code and can only hope for the best when making it. Also this program will be run on the fullscreen terminal 
 this will hide the games code enchancing the experience and not expecting what will come next in each encounter. 
-Another note id like to add all the assests such as sound music or any sort of media that I took will be given credit below. Anyways God speed and hope future me will revisit it. 
+Another note id like to add all the assests such as sound music or any sort of media that I took will be given credit below. Anyways God speed and hope future me will revisit it.
+
+INSTRUCTIONS: in order to play the game correctly with no errors you need to install 2 python modules this includes installing pygame and colorama 
+pygame is used to play the audio required by the game and colorama is a module used to display colour to text and ascii art. 
 
 NOTICE: when playing the game on a undesired screen size or not full-screening the terminal the ascii art being displayed could be messy and scrambled its also recommended to run this game under
 Visual Studio Code however, feel free to use a text editor that best suits you and that supports the ascii art correctly. 
@@ -39,6 +42,10 @@ https://emojicombos.com/south-park [Website used for grabbing Erik Cartman ascii
 
 # as the name implies this module helps make randomly generated numbered mechanics exist 
 import random
+# pygame in this use case is used for inserting music into this game  
+import pygame
+from pygame import mixer
+pygame.mixer.init()
 # the module time helps add cooldown to each procedure which is useful for giving the user time to read the current information before upcoming deletion 
 import time 
 # the module colorma is used to add colour to text in the terminal giving the game a more "lively" look to it 
@@ -86,6 +93,35 @@ def clear_terminal():
 
 def clear_colour():
   print(Style.RESET_ALL)
+
+#   <><><><><><><><><><><><><><><><><><><><><><><><><><>
+#            Music for both journey 1 and journey 2
+#   <><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+def Journey_1_Music(): 
+  # inconclusive
+  mixer.music.load("Chime.wav")
+  mixer.music.play(-1)
+
+def Enemy_Journey_1_Music(): 
+  # inconclusive
+  mixer.music.load("Chime.wav")
+  mixer.music.play(-1)
+
+def Journey_2_Music(): 
+  # inconclusive
+  mixer.music.load("Chime.wav")
+  mixer.music.play(-1)
+
+def Enemy_Journey_2_Music(): 
+  # enemy music for journey 2 should have church bell sounds indicating iminent death 
+  mixer.music.load("Chime.wav")
+  mixer.music.play(-1)
+
+def Outro_Music(): 
+  # outro music should have some ambience
+  mixer.music.load("Chime.wav")
+  mixer.music.play(-1)
 
 #-----------------------------------------------------------------------------------------------------
 # Ascii Art Icon Drawings 
@@ -427,7 +463,7 @@ def Stairs_To_Throne_Art():
                                                                                             ΩΩΩΩΩΩΩ                           δ   ΩΩ                                     
                                                                                                   ΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩΩ         ΩΩΩΩΩ                                       
                                                                                                                     ΩΩΩΩΩΩΩΩΩ        
-        ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         
         """)
 
@@ -1028,7 +1064,7 @@ def Player_Weapons():
   # normal damage: death = 7 - 25 glinted = 12 - 20 lightning = 13 - 16 debug: 99+ on all weapons
 
   # players may choose this weapon for inconsistent but high damage
-  Death_Hunt_Sickle = random.randint(999, 999)
+  Death_Hunt_Sickle = random.randint(6, 27)
   # players may choose this weapon for average consistent good damage
   Glinted_Zweihander = random.randint(12, 20)
   # players may choose this weapon for more consistent but lower damage
@@ -1090,9 +1126,9 @@ def Zeniths_Turn():
 
 
 def Erics_Turn():
-  MoonLight_Arrow_Fall = random.randint(10, 13)
-  Collapsing_Star = random.randint(8, 23)
-  Absolute_Kelvin = random.randint(15, 27)
+  MoonLight_Arrow_Fall = random.randint(5, 9)
+  Collapsing_Star = random.randint(9, 12)
+  Absolute_Kelvin = random.randint(14, 30)
   Eric_Random_Choices = random.randint(0, 2)
 
   Erics_Weapons = [MoonLight_Arrow_Fall, Collapsing_Star, Absolute_Kelvin]
@@ -1106,11 +1142,11 @@ def Erics_Turn():
 
 # my creativity levels is slowly being drained here 
 def RNGesus_Turn():
-  Divinus_hasta = random.randint(12, 17)
-  Cleansed_Dice = random.randint(9, 13)
-  True_Or_False = random.randint(7, 20)
-  Mystic_Justice = random.randint(9, 13)
-  Hollowed = random.randint(10, 20)
+  Divinus_hasta = random.randint(10, 17)
+  Cleansed_Dice = random.randint(3, 10)
+  True_Or_False = random.randint(9, 22)
+  Mystic_Justice = random.randint(12, 15)
+  Hollowed = random.randint(15, 25)
   RNGesus_Random_Choices = random.randint(0, 4)
 
   RNGesus_Weapons = [Divinus_hasta, Cleansed_Dice, True_Or_False, Mystic_Justice, Hollowed]
@@ -1143,7 +1179,7 @@ def Rasputins_Turn():
 def Iku_Blackrocks_Turn():
   Stained_Scythe = random.randint(9, 14)
   Mercury_Poisoning = random.randint(10, 19)
-  Rapport = random.randint(20, 50)
+  Rapport = random.randint(3, 20)
   Iku_Blackrocks_Random_Choices = random.randint(0, 2)
 
 
@@ -1156,9 +1192,9 @@ def Iku_Blackrocks_Turn():
   return Weapon_Selection, Description_Selection
 
 def Servant_Knight_Turn():
-  White_Corona = random.randint(2, 7)
-  Lightning_Strike = random.randint(5, 13)
-  Executioners_Greatsword = random.randint(7, 20)
+  White_Corona = random.randint(5, 10)
+  Lightning_Strike = random.randint(10, 20)
+  Executioners_Greatsword = random.randint(7, 30)
   Servant_Knight_Random_Choices = random.randint(0, 2)
 
   Servant_Knight_Weapons = [White_Corona, Lightning_Strike, Executioners_Greatsword]
@@ -1172,8 +1208,8 @@ def Servant_Knight_Turn():
 
 def BloodDrinker_Reis_Turn():
   Hand_Of_Blood = random.randint(2, 7)
-  Sacrifical_Lamb = random.randint(5, 13)
-  Tres_duos_unus = random.randint(7, 20) # just watch the elden ring mohg fight and you will understand why I named this spell card 
+  Sacrifical_Lamb = random.randint(12, 20)
+  Tres_duos_unus = random.randint(18, 31) # just watch the elden ring mohg fight and you will understand why I named this spell card 
   BloodDrinker_Reis_Random_Choices = random.randint(0, 2)
 
   BloodDrinker_Reis_Weapons = [Hand_Of_Blood, Sacrifical_Lamb, Tres_duos_unus]
@@ -2614,6 +2650,8 @@ def Huby_Developer_Fight(HP_player, Huby_Developer_HP, End_Combat, Weapon_List, 
 # Introduction
 #-----------------------------------------------------------------------------------------------------
 
+Journey_1_Music()
+
 intro_background_Art()
 
 print("\nThe dice is rolling way too many ones, the weather is always rainy, you have been laid off from your job, but most importantly your luck reeks of misfortune... it's time to proclaim justice. Your journey begins now...")
@@ -2645,6 +2683,8 @@ while Input_Validation == False:
     # load player weapons and start the first enemy fight 
     Weapon_List, Death_Hunt_Sickle, Glinted_Zweihander, Lightning_Strike, Block, Block_Percentage_Rounded = Player_Weapons()
     HP_player = Postal_Dude_Fight(HP_player, Postal_dude_HP, End_Combat, Weapon_List, Death_Hunt_Sickle, Glinted_Zweihander, Lightning_Strike, Block, Block_Percentage_Rounded)
+
+    Journey_1_Music()
 
     # start sakuya fight  
     clear_colour()
@@ -2706,7 +2746,7 @@ while Input_Validation == False:
     time.sleep(5.5)
     print("\nUpon opening the door a cave is revealed with no other enterance the player jumps down the smell of rotten flesh within previous travelers and there lies Zenith the reclaimer of succession...")
 
-    time.sleep(5.5)
+    time.sleep(7.5)
     clear_terminal()
 
     Zenith_Art()
@@ -2976,7 +3016,7 @@ while Input_Validation == False:
         print("\nPlease enter a valid input!")
     
 
-    # start blood drinker Rei fight
+    # start blooddrinker akazuri fight
 
     time.sleep(4)
     clear_terminal()
