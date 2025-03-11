@@ -98,6 +98,8 @@ def clear_colour():
 #            Music for both journey 1 and journey 2
 #   <><><><><><><><><><><><><><><><><><><><><><><><><><>
 
+# NOTE: this version of the game as previously stated has no music which means these functions are negligible please ignore this 
+
 def Journey_1_Music(): 
   # inconclusive
   mixer.music.load("Chime.wav")
