@@ -3018,7 +3018,7 @@ while Input_Validation == False:
         print("\nPlease enter a valid input!")
     
 
-    # start blooddrinker akazuri fight
+    # start blooddrinker Rei fight
 
     time.sleep(4)
     clear_terminal()
