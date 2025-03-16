@@ -1071,7 +1071,7 @@ def Player_Weapons():
   # normal damage: death = 6 - 27 glinted = 12 - 20 lightning = 13 - 16 debug: 99+ on one weapon
 
   # players may choose this weapon for inconsistent but high damage
-  Death_Hunt_Sickle = random.randint(999, 999)
+  Death_Hunt_Sickle = random.randint(6, 27)
   # players may choose this weapon for average consistent good damage
   Glinted_Zweihander = random.randint(12, 20)
   # players may choose this weapon for more consistent but lower damage
