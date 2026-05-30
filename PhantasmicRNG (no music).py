@@ -96,7 +96,7 @@ Input_Validation = False
 HP_player = random.randint(185, 275)
 Emergancy_Heal = random.randint(85, 170)
 
-Death_Dialog = open("/home/hubyark/Downloads/RevampRNG/Death Dialog.txt")
+Death_Dialog = open("Death Dialog.txt")
 PLAYER_DEATH_DIALOG_LIST = Death_Dialog.readlines()
 
 # NOTE: split all of the character dialog into seperate arrays for their deaths and progression 
